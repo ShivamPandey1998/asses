@@ -3,12 +3,12 @@ import SeatBookingSystem from "./SeatBookingSystem"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
+    <div>
+
 
        <SeatBookingSystem />
        
-      </header>
+
     </div>
   );
 }

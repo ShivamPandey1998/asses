@@ -1,42 +1,77 @@
-/* Define styles for available and booked seats */
-.available {
+/* SeatBookingSystem.css */
+
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+}
+
+/* Seat Booking System container styles */
+.seat-booking-system {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Title styles */
+.title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+.centered-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0px;
+}
+/* Seat selection styles */
+.seat-selection {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0px;
+}
+
+.label {
+  margin-right: 10px;
+  font-size: 18px;
+  color: #555;
+}
+
+.input {
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  width: 80px;
+  transition: border-color 0.2s;
+}
+
+.input:focus {
+  border-color: #45b29d;
+}
+
+.button {
+  padding: 8px 12px;
+  font-size: 16px;
   background-color: #45b29d;
   color: #fff;
-  box-shadow: none;
-}
-.booked {
-  background-color: #eee;
-  cursor: not-allowed;
-  color: #555;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
 }
 
-/* Define styles for selected seats */
-.selected {
-  background-color: #f2a154;
-  color: #fff;
+.button:hover {
+  background-color: #2f8e7e;
 }
 
-/* Define styles for the row labels */
-.row-label {
-  font-size: 18px;
-  font-weight: bold;
-  text-align: center;
-  text-transform: uppercase;
-  color: #555;
-  margin: 10px 0;
-}
-
-/* Define styles for the seat labels */
-.seat-label {
-  font-size: 14px;
-  text-align: center;
-  margin-bottom: 5px;
-}
-
-/* Define styles for the coach container */
+/* Coach container styles */
 .coach-container {
-  margin: 0 auto;
-  max-width: 900px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -45,11 +80,14 @@
   padding: 20px;
 }
 
-/* Define styles for the seats */
+.row {
+  display: flex;
+}
+
+/* Seat styles */
 .seat {
   width: 50px;
   height: 50px;
-  margin: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -57,16 +95,47 @@
   border-radius: 50%;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  margin: 5px;
 }
 
-/* Define hover effect for available seats */
-.available:hover {
-  background-color: #2f8e7e;
-  cursor: pointer;
+/* Available seats styles */
+.available {
+  background-color: #45b29d;
+  color: #fff;
 }
 
-/* Define hover effect for selected seats */
-.selected:hover {
-  background-color: #e18e3d;
-  cursor: pointer;
+/* Booked seats styles */
+.booked {
+  background-color: #eee;
+  cursor: not-allowed;
+  color: #555;
+}
+
+/* Selected seats styles */
+.selected {
+  background-color: #f2a154;
+  color: #fff;
+}
+
+/* Booked Seats section styles */
+.booked-seats {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.booked-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.booked-seats-list {
+  font-size: 14px;
+  color: #555;
 }

@@ -30,32 +30,46 @@ function SeatBookingSystem() {
     }
   }
 
+  // Divide seats into rows of seven
+  const seatRows = [];
+  for (let i = 0; i < seats.length; i += 7) {
+    const rowSeats = seats.slice(i, i + 7);
+    seatRows.push(rowSeats);
+  }
+
   return (
-    <div>
-      <h1>Train Seat Booking System</h1>
-      <div>
-        <label htmlFor="numSeats">Number of Seats:</label>
-        <input type="number" id="numSeats" value={numSeats} onChange={handleNumSeatsChange} />
-        <button onClick={handleBookSeats}>Book</button>
-      </div>
-      <div>
-        <h2>Seat Availability:</h2>
-        {seats.map((seat, index) => (
-          <span
-            key={index}
-            className={`seat ${seat ? 'booked' : ''}`}
-          >
-            {index + 1}
-          </span>
-        ))}
-      </div>
-      {seatNumbers.length > 0 && (
-        <div>
-          <h2>Booked Seats:</h2>
-          <p>{seatNumbers.join(', ')}</p>
+    <div className="seat-booking-system">
+      <h1 className="title">Train Seat Booking System</h1>
+      <div className="centered-content">
+        <div className="seat-selection">
+          <label htmlFor="numSeats" className="label">Number of Seats:</label>
+          <input type="number" id="numSeats" className="input" value={numSeats} onChange={handleNumSeatsChange} />
+          <button className="button" onClick={handleBookSeats}>Book</button>
         </div>
-      )}
+      </div>
+    <div className="coach-container">
+      {/* Create rows with 7 seats each */}
+      {seatRows.map((row, rowIndex) => (
+        <div key={rowIndex} className="row">
+          {/* Display 7 seats in each row */}
+          {row.map((seat, colIndex) => (
+            <span
+              key={colIndex}
+              className={`seat ${seat ? 'booked' : ''}`}
+            >
+              {rowIndex * 7 + colIndex + 1}
+            </span>
+          ))}
+        </div>
+      ))}
     </div>
+    {seatNumbers.length > 0 && (
+       <div className="booked-seats">
+       <h2>Booked Seats:</h2>
+       <p>{seatNumbers.join(', ')}</p>
+     </div>
+    )}
+  </div>
   );
 }
 
